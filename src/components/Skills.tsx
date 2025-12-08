@@ -6,8 +6,6 @@ import { FaReact } from "react-icons/fa";
 import { FaPython } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 import { SiRstudioide } from "react-icons/si";
-import { SiApacheairflow } from "react-icons/si";
-import { SiGooglebigquery } from "react-icons/si";
 import { MdAnalytics } from "react-icons/md";
 import PowerBIIcon from '../assets/Power-BI.svg';
 import { PiMicrosoftExcelLogo } from "react-icons/pi";
