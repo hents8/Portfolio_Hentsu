@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fluentui/font-icons-mdl2": "^8.5.69",
     "@fluentui/react": "^8.125.2",
     "@fluentui/react-icons": "^2.0.315",

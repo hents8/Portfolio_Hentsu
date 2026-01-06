@@ -62,7 +62,7 @@ export default function About() {
 
             {/* Bouton CV */}
             <a
-              href="/path/to/ton_cv.pdf"
+              href="/cv.pdf"
               target="_blank"
               rel="noreferrer"
               className="mt-2 px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-lg text-sm"
