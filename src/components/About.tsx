@@ -78,7 +78,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="col-span-2 pr-2 md:pr-0"
+          className="col-span-2 px-4 md:px-0 md:pr-0"
         >
           <p className="text-gray-300 leading-relaxed text-lg">
             Data Engineer et Développeur Front-end passionné par la création de solutions qui unissent analyse, automatisation et design. 

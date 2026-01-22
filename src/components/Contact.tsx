@@ -1,57 +1,65 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { X } from "lucide-react";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
-  if (!form.name || !form.email || !form.message) {
-    alert("Merci de remplir tous les champs !");
-    return;
-  }
-  setLoading(true);
+    e.preventDefault();
 
-  // 1️⃣ Envoyer à moi-même
-  emailjs
-    .send(
-      "service_qsvmryd",
-      "template_0vl5j6o",
-      {
-        from_name: form.name,
-        reply_to: form.email,
-        message: form.message,
-      },
-      "ImlMunHu-u3cVqQ8i"
-    )
-    .then(() => {
-      // 2️⃣ Envoyer l'accusé à l'utilisateur
-      return emailjs.send(
+    if (!form.name || !form.email || !form.message) {
+      setError("Merci de remplir tous les champs.");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+
+    // 1️⃣ MAIL POUR TOI (contenu du message)
+    emailjs
+      .send(
         "service_qsvmryd",
-        "template_iao8ca5",
+        "template_0vl5j6o", // → template réception admin
         {
-          from_name: form.name,
-          reply_to: form.email,
+          name: form.name,
+          email: form.email,
           message: form.message,
         },
         "ImlMunHu-u3cVqQ8i"
-      );
-    })
-    .then(() => {
-      setLoading(false);
-      alert("Message envoyé et accusé de réception envoyé !");
-      setForm({ name: "", email: "", message: "" });
-    })
-    .catch((error) => {
-      setLoading(false);
-      alert("Erreur lors de l'envoi : " + error.text);
-    });
-};
+      )
+      .then(() => {
+        // 2️⃣ ACCUSÉ DE RÉCEPTION UTILISATEUR
+        return emailjs.send(
+          "service_qsvmryd",
+          "template_iao8ca5", // → template accusé
+          {
+            name: form.name,
+            email: form.email,
+          },
+          "ImlMunHu-u3cVqQ8i"
+        );
+      })
+      .then(() => {
+        setLoading(false);
+        setSuccess(true);
+        setForm({ name: "", email: "", message: "" });
+      })
+      .catch((err) => {
+        setLoading(false);
+        setError("Erreur lors de l'envoi. Réessayez plus tard.");
+        console.error(err);
+      });
+  };
 
   return (
     <section id="contact" className="py-20 px-6 max-w-4xl mx-auto">
@@ -67,6 +75,7 @@ export default function Contact() {
           className="p-3 rounded bg-[#1E293B]"
           required
         />
+
         <input
           type="email"
           name="email"
@@ -76,6 +85,7 @@ export default function Contact() {
           className="p-3 rounded bg-[#1E293B]"
           required
         />
+
         <textarea
           name="message"
           value={form.message}
@@ -83,16 +93,55 @@ export default function Contact() {
           placeholder="Votre message..."
           className="p-3 rounded bg-[#1E293B] h-32"
           required
-        ></textarea>
+        />
 
         <button
           type="submit"
-          className="bg-cyan-500 hover:bg-cyan-400 px-6 py-3 rounded-lg font-semibold"
           disabled={loading}
+          className="bg-cyan-500 hover:bg-cyan-400 px-6 py-3 rounded-lg font-semibold disabled:opacity-50"
         >
           {loading ? "Envoi..." : "Envoyer"}
         </button>
+
+        {error && <p className="text-red-400 text-sm">{error}</p>}
       </form>
+
+      {/* ✅ POPUP SUCCÈS */}
+      {success && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-fadeIn"
+          onClick={() => setSuccess(false)}
+        >
+          <div
+            className="bg-[#0F172A] p-6 rounded-2xl shadow-xl w-[90%] max-w-md relative animate-slideUp"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-4 right-4 text-gray-400 hover:text-white"
+              onClick={() => setSuccess(false)}
+            >
+              <X size={22} />
+            </button>
+
+            <h3 className="text-xl font-bold text-cyan-400 mb-2">
+              Message envoyé ✅
+            </h3>
+
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Votre message a bien été envoyé.
+              <br />
+              Un accusé de réception vous a été transmis par email.
+            </p>
+
+            <button
+              onClick={() => setSuccess(false)}
+              className="mt-6 w-full bg-cyan-500 hover:bg-cyan-400 py-2 rounded-lg font-semibold transition"
+            >
+              Fermer
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

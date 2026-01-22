@@ -12,19 +12,31 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-cyan-400">Hentsu.</h1>
+       <div className="flex items-center justify-center space-x-3">
+		  {/* Logo */}
+		  <a href="#hero" className="cursor-pointer">
+			<img src="/hentsu.svg" alt="Logo" className="w-10 h-10" />
+		  </a>
+
+		  {/* Hentsu + span sur la même ligne */}
+		  <div className="flex items-baseline space-x-2">
+			<h1 className="heading-logo">Hentsu.</h1>
+			<span className="logo-subtext">Data enthusiast driven Insights & Analytics</span>
+		  </div>
+		</div>
+
 
         {/* Menu desktop */}
         <div className="space-x-6 hidden md:flex">
-          <a href="#hero" className="hover:text-cyan-300">Accueil</a>
-          <a href="#about" className="hover:text-cyan-300">À propos</a>
-		  <a href="#skills" className="hover:text-cyan-300">Compétences</a>
-          <a href="#background" className="hover:text-cyan-300">Parcours</a>
-          <a href="#projects" className="hover:text-cyan-300">Projets</a>
-          <a href="#contact" className="hover:text-cyan-300">Contact</a>
+          <a href="#hero" className="link-nav">Accueil</a>
+          <a href="#about" className="link-nav">À propos</a>
+          <a href="#skills" className="link-nav">Compétences</a>
+          <a href="#background" className="link-nav">Parcours</a>
+          <a href="#projects" className="link-nav">Projets</a>
+          <a href="#contact" className="link-nav">Contact</a>
         </div>
 
-        {/* Menu mobile */}
+        {/* Menu mobile toggle */}
         <div className="md:hidden">
           <button onClick={() => setOpen(!open)}>
             {open ? <X size={24} className="text-white" /> : <Menu size={24} className="text-white" />}
@@ -39,12 +51,12 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <a href="#hero" onClick={() => setOpen(false)}>Accueil</a>
-          <a href="#about" onClick={() => setOpen(false)}>À propos</a>
-		   <a href="#skills" onClick={() => setOpen(false)}>Compétences</a>
-          <a href="#background" onClick={() => setOpen(false)}>Parcours</a>
-          <a href="#projects" onClick={() => setOpen(false)}>Projets</a>
-          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+          <a href="#hero" onClick={() => setOpen(false)} className="link-nav">Accueil</a>
+          <a href="#about" onClick={() => setOpen(false)} className="link-nav">À propos</a>
+          <a href="#skills" onClick={() => setOpen(false)} className="link-nav">Compétences</a>
+          <a href="#background" onClick={() => setOpen(false)} className="link-nav">Parcours</a>
+          <a href="#projects" onClick={() => setOpen(false)} className="link-nav">Projets</a>
+          <a href="#contact" onClick={() => setOpen(false)} className="link-nav">Contact</a>
         </motion.div>
       )}
     </motion.nav>

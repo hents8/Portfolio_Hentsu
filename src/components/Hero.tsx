@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import profilePic from "../assets/profile.jpg";
 import DataNetworkBackground from "../components/DataNetworkBackground";
+import { ClockWidget } from "../components/ClockWidget";
+import { WeatherWidget } from "../components/WeatherWidget";
+import { NewsWidget } from "../components/NewsWidget";
 
 export default function Hero() {
   return (
@@ -62,6 +65,7 @@ export default function Hero() {
           </motion.a>
         </div>
       </div>
+
     </section>
   );
 }

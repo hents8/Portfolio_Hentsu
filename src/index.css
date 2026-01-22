@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* base layer */
+@layer base {
+  body {
+    font-family: 'MyFont', system-ui, sans-serif;
+  }
+}
+
+/* animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -18,3 +26,51 @@
   animation: slideUp 0.3s ease-out;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Composants réutilisables === */
+@layer components {
+  /* Titres */
+  .heading-hero {
+    @apply text-4xl md:text-6xl font-bold text-cyan-400;
+  }
+
+  .heading-section {
+    @apply text-3xl font-bold text-cyan-400 mb-12;
+  }
+
+  .heading-subsection {
+    @apply text-2xl font-semibold text-white mb-6;
+  }
+
+  /* Paragraphes */
+  .text-body {
+    @apply text-lg text-gray-300 mt-4 max-w-xl;
+  }
+
+  .text-body-accent {
+    @apply text-lg text-white font-semibold mt-2;
+  }
+
+  /* Liens / Navbar */
+  .link-nav {
+    @apply hover:text-cyan-300 transition-colors;
+  }
+
+  /* Boutons */
+  .btn-primary {
+    @apply inline-block px-6 py-3 bg-cyan-500 hover:bg-cyan-400 rounded-lg font-semibold;
+  }
+  
+  .heading-logo {
+    @apply text-2xl font-semibold text-cyan-400 m-0;
+  }
+  
+  .logo-subtext {
+    @apply text-sm ;
+    /* ajustement vertical si nécessaire */
+    margin-top: 0.125rem; /* équivalent mt-0.5 pour aligner visuellement */
+  }
+}
