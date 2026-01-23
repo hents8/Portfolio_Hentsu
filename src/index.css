@@ -5,6 +5,10 @@
   body {
     font-family: 'MyFont', system-ui, sans-serif;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* animations */
@@ -24,10 +28,6 @@
 
 .animate-slideUp {
   animation: slideUp 0.3s ease-out;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 /* === Composants réutilisables === */
@@ -63,14 +63,63 @@ html {
   .btn-primary {
     @apply inline-block px-6 py-3 bg-cyan-500 hover:bg-cyan-400 rounded-lg font-semibold;
   }
-  
+
   .heading-logo {
     @apply text-2xl font-semibold text-cyan-400 m-0;
   }
-  
+
   .logo-subtext {
-    @apply text-sm ;
-    /* ajustement vertical si nécessaire */
-    margin-top: 0.125rem; /* équivalent mt-0.5 pour aligner visuellement */
+    @apply text-sm;
+    margin-top: 0.125rem; /* alignement visuel */
   }
+}
+
+/* === Styles custom pour NewsWidget / NewsRow === */
+.widget-news {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  width: 520px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.news-header {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+.news-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.news-row:hover {
+  background: #f9fafb;
+}
+
+.news-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.news-excerpt {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

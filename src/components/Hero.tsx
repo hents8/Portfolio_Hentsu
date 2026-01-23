@@ -1,17 +1,38 @@
 import { motion } from "framer-motion";
 import profilePic from "../assets/profile.jpg";
 import DataNetworkBackground from "../components/DataNetworkBackground";
-import { ClockWidget } from "../components/ClockWidget";
-import { WeatherWidget } from "../components/WeatherWidget";
 import { NewsWidget } from "../components/NewsWidget";
+import { CalendarWidget } from "../components/CalendarWidget";
+import { TimeWeatherWidget } from "../components/TimeWeatherWidget";
+import { useNews } from "../hooks/useNews";
 
 export default function Hero() {
+const { articles = [], loading = true } = useNews();
   return (
     <section
       id="hero"
       className="relative h-screen flex flex-col md:flex-row items-center justify-center text-center md:text-left px-6 gap-10 overflow-hidden"
     >
       <DataNetworkBackground />
+	  
+	    <div className="absolute top-28 left-6 z-20 hidden md:block">	
+			<CalendarWidget />
+		</div>
+
+     
+		 <div className="absolute top-28 right-6 z-20 hidden md:flex gap-4 items-start">
+		   <TimeWeatherWidget />
+		</div>
+		
+		<div className="absolute bottom-6 right-6 z-20 hidden md:block">
+        {!loading && articles.length > 0 ? (
+          <NewsWidget articles={articles.slice(0, 2)} />
+        ) : (
+          <div className="widget-news text-gray-400 text-sm">Chargement des actualités...</div>
+        )}
+      </div>
+		
+		
 
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
         <motion.div
