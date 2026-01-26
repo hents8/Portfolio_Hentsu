@@ -24,11 +24,13 @@ const { articles = [], loading = true } = useNews();
 		   <TimeWeatherWidget />
 		</div>
 		
-		<div className="absolute bottom-6 right-6 z-20 hidden md:block">
+	<div className="absolute bottom-6 right-6 z-20 hidden md:block">
         {!loading && articles.length > 0 ? (
-          <NewsWidget articles={articles.slice(0, 2)} />
+          <NewsWidget articles={articles} />
         ) : (
-          <div className="widget-news text-gray-400 text-sm">Chargement des actualités...</div>
+          <div className="widget-news text-gray-400 text-sm flex justify-center items-center">
+            Chargement des actualités...
+          </div>
         )}
       </div>
 		

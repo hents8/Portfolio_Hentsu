@@ -43,39 +43,37 @@ export function CalendarWidget() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-2 text-xs text-gray-300">
-      {/* Jours + dates */}
-      <div className="flex gap-4">
-        {daysLabels.map((label, i) => (
-          <div key={label} className="flex flex-col items-center">
-            <span
-              className={`text-[11px] tracking-wide ${
-                i === todayIndex
-                  ? "text-cyan-400 font-semibold"
-                  : "opacity-50"
-              }`}
-            >
-              {label}
-            </span>
-            <span
-              className={`text-sm ${
-                i === todayIndex
-                  ? "text-cyan-400 font-bold"
-                  : "text-gray-400"
-              }`}
-            >
-              {days[i]}
-            </span>
-          </div>
-        ))}
-      </div>
+   <div className="flex flex-col gap-2 text-gray-300">
+	  {/* Jours + dates */}
+	  <div className="flex gap-4">
+		{daysLabels.map((label, i) => (
+		  <div key={label} className="flex flex-col items-center">
+			<span
+			  className={`text-[12px] tracking-wide ${
+				i === todayIndex
+				  ? "text-[#00c853] font-semibold"
+				  : "opacity-50"
+			  }`}
+			>
+			  {label}
+			</span>
+			<span
+			  className={`text-[14px] ${
+				i === todayIndex ? "text-[#00c853] font-bold" : "text-gray-400"
+			  }`}
+			>
+			  {days[i]}
+			</span>
+		  </div>
+		))}
+	  </div>
 
-      {/* Mois / année / semaine */}
-      <div className="text-[11px] opacity-60">
-        <span className="capitalize">{monthYear}</span>
-        {" · "}
-        Semaine <span className="text-cyan-400">{weekNumber}</span>
-      </div>
-    </div>
+	  {/* Mois / année / semaine */}
+	  <div className="text-[14px] opacity-60">
+		<span className="capitalize">{monthYear}</span>
+		{" · "}
+		Semaine <span className="text-[#00c853]">{weekNumber}</span>
+	  </div>
+	</div>
   );
 }
