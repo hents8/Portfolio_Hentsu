@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profilePic from "../assets/profile.jpg";
+import profilePic from "../assets/prof.png";
 import DataNetworkBackground from "../components/DataNetworkBackground";
 import { NewsWidget } from "../components/NewsWidget";
 import { CalendarWidget } from "../components/CalendarWidget";
@@ -46,10 +46,10 @@ export default function Hero() {
   className="flex flex-col items-start"
 >
   <img
-    src={profilePic}
-    alt="Henintsoa"
-    className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover shadow-2xl"
-  />
+  src={profilePic}
+  alt="Henintsoa"
+  className="w-52 h-52 md:w-96 md:h-96 rounded-full object-cover object-top shadow-2xl"
+/>
 
   {/* Citation sous la photo */}
   <motion.div
@@ -60,7 +60,6 @@ export default function Hero() {
   >
     <p
       className="text-lg md:text-xl leading-relaxed italic text-gray-200"
-      style={{ fontFamily: "SabFont" }}
     >
       “Without data, you’re just another person with an opinion.”
     </p>
@@ -82,11 +81,11 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-[#00c853]">Henintsoa Rabekoto</span>
+            <span className="text-[#F5F5F5]">Henintsoa Rabekoto</span>
           </motion.h1>
 
           <motion.p
-            className="mt-4 text-lg text-gray-300"
+            className="mt-4 text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -96,7 +95,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.p
-            className="mt-2 text-lg text-white font-semibold"
+            className="mt-2 text-lg text-white"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6 }}
@@ -105,7 +104,7 @@ export default function Hero() {
           </motion.p>
           <motion.a
             href="#projects"
-            className="inline-block mt-8 px-6 py-3 bg-[#00c853] hover:bg-[#00b44a] rounded-lg font-semibold transition-colors"
+            className="inline-block mt-8 px-6 py-3 bg-[#2A3A2A] hover:bg-[#00b44a] rounded-lg font-semibold transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

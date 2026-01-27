@@ -1,6 +1,6 @@
+@import "./styles/fonts.css";
 @import "tailwindcss";
 
-/* base layer */
 @layer base {
   body {
     font-family: 'MyFont', system-ui, sans-serif;
@@ -9,12 +9,11 @@
   html {
     scroll-behavior: smooth;
   }
-  
-  .font-calendar {
-    font-family: 'SabFont', system-ui, sans-serif;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0.02em;
-  }
+}
+
+/* Classe utilitaire optionnelle */
+.font-calendar {
+  font-family: 'SabFont', 'MyFont', system-ui, sans-serif;
 }
 
 /* animations */

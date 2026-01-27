@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'MyFont';
-  src: url('./assets/fonts/SFPRODISPLAYREGULAR.otf') format('opentype');
+  src: url('/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -8,16 +8,16 @@
 
 @font-face {
   font-family: 'MyFont';
-  src: url('./assets/fonts/SFPRODISPLAYBOLD.otf') format('opentype');
+  src: url('/fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "SabFont";
-  src: url("./assets/fonts/BetterSabrina.otf") format("truetype");
-  font-weight: bold;
+  font-family: 'SabFont';
+  src: url('/fonts/BetterSabrina.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }

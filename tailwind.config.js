@@ -7,11 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // Police principale du site
         sans: ['MyFont', 'system-ui', 'sans-serif'],
-
-        // Police spécifique pour le calendrier
-        calendar: ['SabFont', 'MyFont', 'system-ui'],
+        calendar: ['SabFont', 'MyFont', 'system-ui', 'sans-serif'],
       },
     },
   },

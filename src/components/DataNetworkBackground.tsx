@@ -40,7 +40,7 @@ export default function DataNetworkBackground() {
     geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
 
     const material = new THREE.PointsMaterial({
-      color: "#4fd1c5",
+      color: "#ADFD8C",
       size: 0.045,
       transparent: true,
     });
@@ -76,7 +76,7 @@ export default function DataNetworkBackground() {
         const line = new THREE.Line(
           lineGeo,
           new THREE.LineBasicMaterial({
-            color: "#4fd1c5",
+            color: "#ADFD8C",
             transparent: true,
             opacity: 0.12,
           })

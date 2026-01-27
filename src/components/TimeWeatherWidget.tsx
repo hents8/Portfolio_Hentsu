@@ -33,32 +33,32 @@ export function TimeWeatherWidget() {
   }, []);
 
   return (
-    <div className="flex flex-col items-end text-xs text-gray-300 leading-tight">
-      {/* Heure */}
-      <span className="text-2xl font-bold text-cyan-400">
-        {time}
-      </span>
+    <div className="flex flex-col items-end text-xs text-[#BAC8C1] leading-tight">
+	  {/* Heure */}
+	  <span className="text-2xl font-bold text-[#B1FB8E]">
+		{time}
+	  </span>
 
-      <span className="opacity-60 mb-3">
-        Antananarivo · GMT+3
-      </span>
+	  <span className="opacity-60 mb-3">
+		Antananarivo · GMT+3
+	  </span>
 
-      {/* Météo */}
-      {weather && (
-        <>
-          <span className="text-lg font-semibold text-cyan-400">
-            {Math.round(weather.main.temp)}°C
-          </span>
+	  {/* Météo */}
+	  {weather && (
+		<>
+		  <span className="text-lg font-semibold text-[#B1FB8E]">
+			{Math.round(weather.main.temp)}°C
+		  </span>
 
-          <span className="capitalize opacity-70">
-            {weather.weather[0].description}
-          </span>
+		  <span className="capitalize opacity-70">
+			{weather.weather[0].description}
+		  </span>
 
-          <span className="opacity-50">
-            Vent {weather.wind.speed} m/s · Hum {weather.main.humidity}%
-          </span>
-        </>
-      )}
-    </div>
+		  <span className="opacity-50">
+			Vent {weather.wind.speed} m/s · Hum {weather.main.humidity}%
+		  </span>
+		</>
+	  )}
+	</div>
   );
 }

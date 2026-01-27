@@ -43,7 +43,7 @@ export function CalendarWidget() {
   }, []);
 
   return (
-   <div className="flex flex-col gap-2 text-gray-300">
+	<div className="flex flex-col gap-2 text-[#BAC8C1]">
 	  {/* Jours + dates */}
 	  <div className="flex gap-4">
 		{daysLabels.map((label, i) => (
@@ -51,7 +51,7 @@ export function CalendarWidget() {
 			<span
 			  className={`text-[12px] tracking-wide ${
 				i === todayIndex
-				  ? "text-[#00c853] font-semibold"
+				  ? "text-[#B1FB8E] font-semibold"
 				  : "opacity-50"
 			  }`}
 			>
@@ -59,7 +59,7 @@ export function CalendarWidget() {
 			</span>
 			<span
 			  className={`text-[14px] ${
-				i === todayIndex ? "text-[#00c853] font-bold" : "text-gray-400"
+				i === todayIndex ? "text-[#B1FB8E] font-bold" : "text-[#BAC8C1]"
 			  }`}
 			>
 			  {days[i]}
@@ -69,10 +69,10 @@ export function CalendarWidget() {
 	  </div>
 
 	  {/* Mois / année / semaine */}
-	  <div className="text-[14px] opacity-60">
+	  <div className="text-[14px] text-[#BAC8C1] opacity-60">
 		<span className="capitalize">{monthYear}</span>
 		{" · "}
-		Semaine <span className="text-[#00c853]">{weekNumber}</span>
+		Semaine <span className="text-[#B1FB8E]">{weekNumber}</span>
 	  </div>
 	</div>
   );
