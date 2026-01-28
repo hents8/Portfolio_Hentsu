@@ -37,11 +37,20 @@ export default function Navbar() {
         </div>
 
         {/* Menu mobile toggle */}
-        <div className="md:hidden">
-          <button onClick={() => setOpen(!open)}>
-            {open ? <X size={24} className="text-white" /> : <Menu size={24} className="text-white" />}
-          </button>
-        </div>
+       {/* Menu mobile toggle */}
+		<div className="md:hidden">
+		  <button
+			onClick={() => setOpen(!open)}
+			aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+			className="p-2 focus:outline-none focus:ring-2 focus:ring-[#B1FB8E] rounded transition"
+		  >
+			{open ? (
+			  <X size={24} className="text-[#F5F5F5]" />
+			) : (
+			  <Menu size={24} className="text-[#F5F5F5]" />
+			)}
+		  </button>
+		</div>
       </div>
 
       {/* Menu mobile */}

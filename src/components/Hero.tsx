@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import profilePic from "../assets/prof.png";
 import DataNetworkBackground from "../components/DataNetworkBackground";
 import { NewsWidget } from "../components/NewsWidget";
@@ -8,6 +9,36 @@ import { useNews } from "../hooks/useNews";
 
 export default function Hero() {
   const { articles = [], loading = true } = useNews();
+  const quotes = [
+  {
+    text: "Without data, you're just another person with an opinion.",
+    author: "W. Edwards Deming",
+  },
+  {
+    text: "Data is the new oil.",
+    author: "Clive Humby",
+  },
+  {
+    text: "In God we trust. All others must bring data.",
+    author: "W. Edwards Deming",
+  },
+  {
+    text: "Numbers have an important story to tell.",
+    author: "Stephen Few",
+  },
+];
+	const [quoteIndex, setQuoteIndex] = useState(0);
+
+// Changer la citation toutes les 5 secondes
+	useEffect(() => {
+	  const interval = setInterval(() => {
+		setQuoteIndex((prev) => (prev + 1) % quotes.length);
+	  }, 5000);
+
+	  return () => clearInterval(interval);
+	}, []);
+
+const currentQuote = quotes[quoteIndex];
 
   return (
     <section
@@ -39,38 +70,66 @@ export default function Hero() {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
+	  <div
+		  className="
+			hidden md:block
+			absolute
+			right-0
+			top-1/2
+			-translate-y-1/2
+			h-[55%]
+			w-[100%]
+			bg-gradient-to-l from-[#404E3B]/70 to-transparent
+			backdrop-blur-3xl
+			rounded-3xl
+			-z-10
+			shadow-2xl
+		  "
+		/>
         <motion.div
-  initial={{ opacity: 0, scale: 0.8 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.7 }}
-  className="flex flex-col items-start"
->
-  <img
-  src={profilePic}
-  alt="Henintsoa"
-  className="w-52 h-52 md:w-96 md:h-96 rounded-full object-cover object-top shadow-2xl"
-/>
+		  initial={{ opacity: 0, scale: 0.8 }}
+		  animate={{ opacity: 1, scale: 1 }}
+		  transition={{ duration: 0.7 }}
+		  className="flex flex-col items-start"
+		>
+		  <img
+		  src={profilePic}
+		  alt="Henintsoa"
+		  className="w-52 h-52 md:w-96 md:h-96 rounded-full object-cover object-top shadow-2xl"
+		/>
 
-  {/* Citation sous la photo */}
-  <motion.div
-    className="mt-8 max-w-md"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ delay: 0.8 }}
-  >
-    <p
-      className="text-lg md:text-xl leading-relaxed italic text-gray-200"
-    >
-      “Without data, you’re just another person with an opinion.”
-    </p>
+	{/* Citation sous la photo */}
+	<div
+	className="hidden md:block mt-8 border-l-2 border-[#7B9669] pl-4"
+	  style={{
+		width: "320px",     
+		height: "150px",    
+		overflow: "hidden",
+	  }}
+	>
+	  <AnimatePresence mode="wait">
+		<motion.div
+		  key={quoteIndex}
+		  initial={{ opacity: 0, x: -20 }}
+		  animate={{ opacity: 1, x: 0 }}
+		  exit={{ opacity: 0, x: 20 }}
+		  transition={{ duration: 0.8 }}
+		  className="flex flex-col justify-end h-full"
+		>
+		  <p className="text-lg md:text-xl leading-relaxed italic text-[#E6E6E6]">
+			“{currentQuote.text}”
+		  </p>
+		  <span
+			className="block mt-3 text-sm tracking-wide text-[#B1FB8E] font-semibold"
+			style={{ fontFamily: "MyFont" }}
+		  >
+			— {currentQuote.author}
+		  </span>
+		</motion.div>
+	  </AnimatePresence>
+	</div>
 
-    <span
-      className="block mt-3 text-base tracking-wide text-[#00c853] font-semibold"
-      style={{ fontFamily: "MyFont" }}
-    >
-      — W. Edwards Deming
-    </span>
-  </motion.div>
+
 </motion.div>
 
 
@@ -104,7 +163,7 @@ export default function Hero() {
           </motion.p>
           <motion.a
             href="#projects"
-            className="inline-block mt-8 px-6 py-3 bg-[#2A3A2A] hover:bg-[#00b44a] rounded-lg font-semibold transition-colors"
+            className="inline-block mt-8 px-6 py-3 bg-[#2A3A2A] hover:bg-[#7b9669] rounded-lg font-semibold transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

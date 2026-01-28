@@ -39,7 +39,7 @@ export function TimeWeatherWidget() {
 		{time}
 	  </span>
 
-	  <span className="opacity-60 mb-3">
+	  <span className="text-[12px] opacity-60 mb-3">
 		Antananarivo · GMT+3
 	  </span>
 
@@ -50,11 +50,11 @@ export function TimeWeatherWidget() {
 			{Math.round(weather.main.temp)}°C
 		  </span>
 
-		  <span className="capitalize opacity-70">
+		  <span className="text-[12px] capitalize opacity-70">
 			{weather.weather[0].description}
 		  </span>
 
-		  <span className="opacity-50">
+		  <span className="text-[12px] opacity-50">
 			Vent {weather.wind.speed} m/s · Hum {weather.main.humidity}%
 		  </span>
 		</>

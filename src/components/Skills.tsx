@@ -88,31 +88,53 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-20 px-4 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold mb-10 text-cyan-400">Mes Compétences</h2>
+	  <h2 className="text-3xl font-bold mb-10 text-[#B1FB8E]">
+		Mes Compétences
+	  </h2>
 
-      <div className="grid gap-12 md:grid-cols-2">
-        {skillCategories.map((category) => (
-          <motion.div
-            key={category.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-xl font-semibold mb-4 text-white">{category.title}</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {category.skills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="bg-[#1E293B] p-3 rounded-lg text-white font-medium hover:bg-cyan-400 hover:text-black transition-all cursor-pointer flex items-center"
-                >
-                  {skill.icon} {skill.name}
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+	  <div className="grid gap-12 md:grid-cols-2">
+		{skillCategories.map((category) => (
+		  <motion.div
+			key={category.title}
+			initial={{ opacity: 0, y: 20 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6 }}
+			viewport={{ once: true }}
+		  >
+			<h3 className="text-xl font-semibold mb-4 text-[#E6E6E6]">
+			  {category.title}
+			</h3>
+
+			<div className="grid grid-cols-2 gap-4">
+			  {category.skills.map((skill) => (
+				<div
+				  key={skill.name}
+				  className="
+					bg-[#2A3A2A]
+					p-3 rounded-lg
+					text-[#B1FB8E]
+					font-medium
+					flex items-center gap-2
+					cursor-pointer
+					transition-all duration-300
+					hover:bg-[#7B9669]
+					hover:scale-[1.03]
+					shadow-lg
+				  "
+				>
+				  <span className="text-[#F5F5F5]">
+					{skill.icon}
+				  </span>
+				   <span className="text-[#F5F5F5]">
+				  {skill.name}
+				  </span>
+				</div>
+			  ))}
+			</div>
+		  </motion.div>
+		))}
+	  </div>
+	</section>
+
   );
 }

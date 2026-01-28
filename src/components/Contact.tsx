@@ -63,85 +63,86 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 px-6 max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold text-cyan-400 mb-6">Contact</h2>
+  <h2 className="text-3xl font-bold text-[#B1FB8E] mb-6">Contact</h2>
 
-      <form className="grid gap-4" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-          placeholder="Votre nom"
-          className="p-3 rounded bg-[#1E293B]"
-          required
-        />
+  <form className="grid gap-4" onSubmit={handleSubmit}>
+    <input
+      type="text"
+      name="name"
+      value={form.name}
+      onChange={handleChange}
+      placeholder="Votre nom"
+      className="p-3 rounded bg-[#2A3A2A] text-[#F5F5F5] placeholder-gray-400"
+      required
+    />
 
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-          placeholder="Votre email"
-          className="p-3 rounded bg-[#1E293B]"
-          required
-        />
+    <input
+      type="email"
+      name="email"
+      value={form.email}
+      onChange={handleChange}
+      placeholder="Votre email"
+      className="p-3 rounded bg-[#2A3A2A] text-[#F5F5F5] placeholder-gray-400"
+      required
+    />
 
-        <textarea
-          name="message"
-          value={form.message}
-          onChange={handleChange}
-          placeholder="Votre message..."
-          className="p-3 rounded bg-[#1E293B] h-32"
-          required
-        />
+    <textarea
+      name="message"
+      value={form.message}
+      onChange={handleChange}
+      placeholder="Votre message..."
+      className="p-3 rounded bg-[#2A3A2A] text-[#F5F5F5] placeholder-gray-400 h-32"
+      required
+    />
 
+    <button
+      type="submit"
+      disabled={loading}
+      className="bg-[#B1FB8E] hover:bg-[#7B9669] text-[#2A3A2A] px-6 py-3 rounded-lg font-semibold disabled:opacity-50 transition"
+    >
+      {loading ? "Envoi..." : "Envoyer"}
+    </button>
+
+    {error && <p className="text-red-400 text-sm">{error}</p>}
+  </form>
+
+  {/* ✅ POPUP SUCCÈS */}
+  {success && (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+      onClick={() => setSuccess(false)}
+    >
+      <div
+        className="bg-[#2A3A2A] p-6 rounded-2xl shadow-xl w-[90%] max-w-md relative"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
-          type="submit"
-          disabled={loading}
-          className="bg-cyan-500 hover:bg-cyan-400 px-6 py-3 rounded-lg font-semibold disabled:opacity-50"
-        >
-          {loading ? "Envoi..." : "Envoyer"}
-        </button>
-
-        {error && <p className="text-red-400 text-sm">{error}</p>}
-      </form>
-
-      {/* ✅ POPUP SUCCÈS */}
-      {success && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-fadeIn"
+          className="absolute top-4 right-4 text-gray-400 hover:text-[#F5F5F5]"
           onClick={() => setSuccess(false)}
         >
-          <div
-            className="bg-[#0F172A] p-6 rounded-2xl shadow-xl w-[90%] max-w-md relative animate-slideUp"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="absolute top-4 right-4 text-gray-400 hover:text-white"
-              onClick={() => setSuccess(false)}
-            >
-              <X size={22} />
-            </button>
+          <X size={22} />
+        </button>
 
-            <h3 className="text-xl font-bold text-cyan-400 mb-2">
-              Message envoyé ✅
-            </h3>
+        <h3 className="text-xl font-bold text-[#B1FB8E] mb-2">
+          Message envoyé
+        </h3>
 
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Votre message a bien été envoyé.
-              <br />
-              Un accusé de réception vous a été transmis par email.
-            </p>
+        <p className="text-[#F5F5F5] text-sm leading-relaxed">
+          Votre message a bien été envoyé.
+          <br />
+          Un accusé de réception vous a été transmis par email.
+        </p>
 
-            <button
-              onClick={() => setSuccess(false)}
-              className="mt-6 w-full bg-cyan-500 hover:bg-cyan-400 py-2 rounded-lg font-semibold transition"
-            >
-              Fermer
-            </button>
-          </div>
-        </div>
-      )}
-    </section>
+        <button
+          onClick={() => setSuccess(false)}
+          className="mt-6 w-full bg-[#B1FB8E] hover:bg-[#7B9669] text-[#2A3A2A] py-2 rounded-lg font-semibold transition"
+        >
+          Fermer
+        </button>
+      </div>
+    </div>
+  )}
+</section>
+
   );
 }

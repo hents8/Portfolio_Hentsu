@@ -60,23 +60,23 @@
   }
 
   /* Liens / Navbar */
-  .link-nav {
-    @apply hover:text-cyan-300 transition-colors;
-  }
+ .link-nav {
+  @apply text-[#BAC8C1] transition-colors duration-200 hover:text-[#B1FB8E];
+}
+
 
   /* Boutons */
   .btn-primary {
     @apply inline-block px-6 py-3 bg-cyan-500 hover:bg-cyan-400 rounded-lg font-semibold;
   }
 
-  .heading-logo {
-    @apply text-2xl font-semibold text-cyan-400 m-0;
-  }
+	.heading-logo {
+	  @apply text-2xl font-semibold text-[#B1FB8E] tracking-wide;
+	}
 
-  .logo-subtext {
-    @apply text-sm;
-    margin-top: 0.125rem; /* alignement visuel */
-  }
+	.logo-subtext {
+	  @apply text-xs text-[#BAC8C1] opacity-80;
+	}
 }
 
 /* === Styles custom pour NewsWidget / NewsRow === */

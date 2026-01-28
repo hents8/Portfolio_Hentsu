@@ -48,70 +48,113 @@ Projet d'automatisation Marketing :
 
   return (
     <section id="projects" className="py-20 px-6 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold mb-10 text-cyan-400">Projets</h2>
+  <h2 className="text-3xl font-bold mb-10 text-[#B1FB8E]">
+    Projets
+  </h2>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {projects.map((p) => (
-          <div
-            key={p.title}
-            onClick={() => setSelected(p)}
-            className="bg-[#1E293B] p-6 rounded-xl hover:scale-105 transition cursor-pointer"
-          >
-            <h3 className="text-xl font-bold text-white mb-2">{p.title}</h3>
-            <p className="text-gray-300 mb-3">{p.description}</p>
+  <div className="grid md:grid-cols-3 gap-8">
+    {projects.map((p) => (
+      <div
+        key={p.title}
+        onClick={() => setSelected(p)}
+        className="
+          bg-[#2A3A2A]
+          p-6
+          rounded-xl
+          hover:scale-105
+          hover:bg-[#7B9669]
+          transition
+          cursor-pointer
+          shadow-lg
+        "
+      >
+        <h3 className="text-xl font-bold text-[#F5F5F5] mb-2">
+          {p.title}
+        </h3>
 
-            <div className="flex flex-wrap gap-2">
-              {p.tech.map((t) => (
-                <span
-                  key={t}
-                  className="bg-cyan-400 text-black text-xs font-semibold px-2 py-1 rounded"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+        <p className="text-[#BAC8C1] mb-3">
+          {p.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {p.tech.map((t) => (
+            <span
+              key={t}
+              className="
+                bg-[#B1FB8E]
+                text-[#2A3A2A]
+                text-xs
+                font-semibold
+                px-2
+                py-1
+                rounded
+              "
+            >
+              {t}
+            </span>
+          ))}
+        </div>
       </div>
+    ))}
+  </div>
 
-      {/* POPUP */}
-      {selected && (
-        <div
-          className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
+  {/* POPUP */}
+  {selected && (
+    <div
+      className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
+      onClick={() => setSelected(null)}
+    >
+      <div
+        className="
+          bg-[#2A3A2A]
+          p-8
+          rounded-2xl
+          shadow-2xl
+          max-w-xl
+          w-full
+          relative
+          border
+          border-[#7B9669]/40
+        "
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          className="absolute top-4 right-4 text-[#BAC8C1] hover:text-[#F5F5F5]"
           onClick={() => setSelected(null)}
         >
-          <div
-            className="bg-[#0F172A] p-8 rounded-2xl shadow-xl max-w-xl w-full relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="absolute top-4 right-4 text-gray-400 hover:text-white"
-              onClick={() => setSelected(null)}
+          <X size={26} />
+        </button>
+
+        <h3 className="text-2xl font-bold text-[#B1FB8E] mb-4">
+          {selected.title}
+        </h3>
+
+        <p className="text-[#BAC8C1] whitespace-pre-line leading-relaxed">
+          {selected.details}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mt-6">
+          {selected.tech.map((t: string) => (
+            <span
+              key={t}
+              className="
+                bg-[#B1FB8E]
+                text-[#2A3A2A]
+                text-xs
+                font-semibold
+                px-3
+                py-1
+                rounded
+              "
             >
-              <X size={26} />
-            </button>
-
-            <h3 className="text-2xl font-bold text-cyan-400 mb-4">
-              {selected.title}
-            </h3>
-
-            <p className="text-gray-300 whitespace-pre-line leading-relaxed">
-              {selected.details}
-            </p>
-
-            <div className="flex flex-wrap gap-2 mt-6">
-              {selected.tech.map((t: string) => (
-                <span
-                  key={t}
-                  className="bg-cyan-400 text-black text-xs font-semibold px-3 py-1 rounded"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
+              {t}
+            </span>
+          ))}
         </div>
-      )}
-    </section>
+      </div>
+    </div>
+  )}
+</section>
+
   );
 }
