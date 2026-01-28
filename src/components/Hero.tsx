@@ -60,7 +60,7 @@ const currentQuote = quotes[quoteIndex];
       {/* News */}
       <div className="absolute bottom-6 right-6 z-20 hidden md:block">
         {!loading && articles.length > 0 ? (
-          <NewsWidget articles={articles} />
+          <NewsWidget articles={articles} loading={loading} />
         ) : (
           <div className="text-gray-400 text-sm flex justify-center items-center">
             Chargement des actualités...
