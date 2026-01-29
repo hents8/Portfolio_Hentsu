@@ -26,6 +26,10 @@ export default function Hero() {
     text: "Numbers have an important story to tell.",
     author: "Stephen Few",
   },
+  {
+    text: "Our deepest fear is not that we are inadequate. Our deepest fear is that we are powerful beyond measure. It is our light, not our darkness, that most frightens us.",
+    author: "Marianne Williamson",
+  },
 ];
 	const [quoteIndex, setQuoteIndex] = useState(0);
 
