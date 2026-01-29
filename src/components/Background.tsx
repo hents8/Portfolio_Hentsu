@@ -23,19 +23,12 @@ export default function Background() {
 
             {/* Analyste Statistique */}
           <li className="flex flex-col md:flex-row md:items-start mb-6">
-		  {/* Icône de l'entreprise */}
-		  <div className="flex-shrink-0 mr-4 bg-white p-2 rounded-lg">
-			<img
-			  src={OutsIcon}
-			  alt="Logo entreprise"
-			  className="w-20 h-20 object-contain"
-			/>
-		  </div>
+		  
 
 		  {/* Contenu principal */}
 		  <div className="flex-1">
 			<div className="flex items-center justify-between">
-			  <h4 className="text-lg font-semibold text-[#B1FB8E]">Analyste Statistique</h4>
+			  <h4 className="text-lg font-semibold text-[#B1FB8E]">Chargé d'Etude Statistique</h4>
 			  <span className="text-gray-400 text-sm ml-2">2025</span>
 			</div>
 			
@@ -52,13 +45,7 @@ export default function Background() {
 		
            {/* Data Visualization Analyst */}
             <li className="flex flex-col md:flex-row md:items-start mb-6">
-			<div className="flex-shrink-0 mr-4 bg-white p-2 rounded-lg">
-			<img
-			  src={Dcdm}
-			  alt="Logo entreprise"
-			  className="w-20 h-20 object-contain"
-			/>
-		  </div>
+			
 		  <div className="flex-1">
 		  <div className="flex items-center justify-between">
               <h4 className="text-lg font-semibold text-[#B1FB8E]">Data Visualization Analyst</h4>
@@ -74,13 +61,7 @@ export default function Background() {
 
             {/* Professeur de Mathématiques */}
            <li className="flex flex-col md:flex-row md:items-start mb-6">
-		   <div className="flex-shrink-0 mr-4 bg-white p-2 rounded-lg">
-			<img
-			  src={Ljra}
-			  alt="Logo entreprise"
-			  className="w-20 h-20 object-contain"
-			/>
-		  </div>
+		   
 		  <div className="flex-1">
 		  <div className="flex items-center justify-between">
               <h4 className="text-lg font-semibold text-[#B1FB8E]">Professeur de Mathématiques</h4>
