@@ -84,15 +84,15 @@ export default function About() {
           className="col-span-2 px-4 md:px-0 md:pr-0"
         >
           <p className="text-[#BAC8C1] leading-relaxed text-lg">
-            Data Engineer et Développeur Front-end passionné par la création de solutions qui unissent analyse, automatisation et design. 
+            Data Engineer et développeur front-end passionné par la création de solutions qui unissent analyse, automatisation et design. 
             J’aide les organisations à transformer leurs données en 
             <span className="text-[#B1FB8E] font-semibold"> insights exploitables </span>
             grâce à des pipelines fiables, des dashboards intuitifs et des interfaces modernes.
             <br /><br />
-            Avec plus de trois ans d’expérience en analyse statistique et marketing, j’ai développé une expertise complète : collecte, traitement, automatisation, visualisation et développement web. 
+            Avec plus de quatre ans d’expérience en analyse statistique et marketing, j’ai développé une expertise complète : collecte, traitement, automatisation, visualisation et développement web. 
             Je maîtrise R, Python, SQL, JavaScript, HTML/CSS ainsi que Power BI, Looker Studio, Figma, Photoshop et Illustrator.
             <br /><br />
-            Curieux, rigoureux et orienté solution, j’aime concevoir des systèmes et des expériences digitales qui rendent la donnée plus claire, plus utile et plus impactante pour la prise de décision.
+            Curieux, rigoureux et orienté solution, j’aime concevoir des systèmes et des expériences digitales qui rendent les données plus claires, plus utiles et plus impactantes pour la prise de décision.
           </p>
         </motion.div>
 
