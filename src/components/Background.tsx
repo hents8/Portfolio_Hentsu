@@ -1,7 +1,4 @@
 import { motion } from "framer-motion";
-import OutsIcon from '../assets/OutsIcon.svg';
-import Dcdm from '../assets/dcdm.jpg';
-import Ljra from '../assets/ljra.jpg';
 
 export default function Background() {
   return (
