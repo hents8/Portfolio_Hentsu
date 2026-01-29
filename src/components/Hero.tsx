@@ -50,12 +50,47 @@ const currentQuote = quotes[quoteIndex];
       className="relative h-screen flex flex-col md:flex-row items-center justify-center text-center md:text-left px-6 gap-10 overflow-hidden"
     >
       <DataNetworkBackground />
+	  
+		{/* ░░░ MOBILE TOP BAR ░░░ */}
+			<div
+			  className="
+				md:hidden
+				w-full
+				px-4
+				pt-4
+				relative
+				-top-6
+				z-20
+			  "
+			>
+			  <div
+				className="
+				  flex
+				  items-start
+				  justify-between
+				  p-3
+				  -mx-6
+				"
+			  >
+				{/* Calendar gauche */}
+				<div className="flex justify-start">
+				  <CalendarWidget />
+				</div>
+
+				{/* Weather droite */}
+				<div className="flex justify-end">
+				  <TimeWeatherWidget />
+				</div>
+			  </div>
+			</div>
+
 
       {/* Calendar */}
       <div className="absolute top-28 left-6 z-20 hidden md:block">
         <CalendarWidget />
       </div>
 
+     
       {/* Time + Weather */}
       <div className="absolute top-28 right-6 z-20 hidden md:flex gap-4 items-start">
         <TimeWeatherWidget />
@@ -63,17 +98,26 @@ const currentQuote = quotes[quoteIndex];
 
       {/* News */}
       <div className="absolute bottom-6 right-6 z-20 hidden md:block">
-        {!loading && articles.length > 0 ? (
-          <NewsWidget articles={articles} loading={loading} />
-        ) : (
-          <div className="text-gray-400 text-sm flex justify-center items-center">
-            Chargement des actualités...
-          </div>
-        )}
-      </div>
+  {!loading && articles.length > 0 ? (
+    <NewsWidget articles={articles} loading={loading} />
+  ) : (
+    <div className="text-gray-400 text-sm flex justify-center items-center">
+      Chargement des actualités...
+    </div>
+  )}
+</div>
+
+{/* Mobile bottom-left */}
+<div className="block md:hidden absolute bottom-0 left-0 z-20 w-1/2 p-2">
+  {!loading && articles.length > 0 ? (
+    <NewsWidget articles={articles.slice(0, 1)} loading={loading} />
+  ) : (
+    <div className="text-gray-400 text-xs mt-1">Aucun article disponible.</div>
+  )}
+</div>
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
+      <div className="relative z-10 flex flex-col md:flex-row items-center gap-10" style={{ top: "-1.5rem" }}>
 		  <div
 			  className="
 				hidden md:block

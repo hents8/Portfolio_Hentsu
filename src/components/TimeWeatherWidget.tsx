@@ -33,7 +33,28 @@ export function TimeWeatherWidget() {
   }, []);
 
   return (
-    <div className="flex flex-col items-end text-xs text-[#BAC8C1] leading-tight">
+  <>
+	<div className="md:hidden w-full flex flex-col items-end px-3 py-2 text-[#BAC8C1] text-xs leading-tight">
+        <span className="font-bold text-[#B1FB8E]">
+          {time}
+        </span>
+        <span className="opacity-60 mb-1">
+          Antananarivo · GMT+3
+        </span>
+
+      {weather && (
+		<>
+          <span className="font-semibold text-[#B1FB8E]">
+            {Math.round(weather.main.temp)}°C
+          </span>
+          <span className="capitalize opacity-70">
+            {weather.weather[0].description}
+          </span>
+        </>
+      )}
+    </div>
+	
+    <div className="hidden md:flex flex-col items-end text-xs text-[#BAC8C1] leading-tight">
 	  {/* Heure */}
 	  <span className="text-2xl font-bold text-[#B1FB8E]">
 		{time}
@@ -60,5 +81,6 @@ export function TimeWeatherWidget() {
 		</>
 	  )}
 	</div>
+	</>
   );
 }

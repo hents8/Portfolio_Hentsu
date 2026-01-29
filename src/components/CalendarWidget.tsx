@@ -43,7 +43,25 @@ export function CalendarWidget() {
   }, []);
 
   return (
-	<div className="flex flex-col gap-2 text-[#BAC8C1]">
+  <>
+	<div className="md:hidden flex flex-col items-start px-3 py-2 text-[#BAC8C1] text-xs leading-tight">
+		  <span className="font-semibold text-[#B1FB8E] flex gap-2">
+			{daysLabels[todayIndex]}
+			<span className="text-[#F5F5F5]">
+			  {days[todayIndex]}
+			</span>
+		  </span>
+
+		  <span className="text-[#B1FB8E] opacity-80">
+			Semaine {weekNumber}
+		  </span>
+
+		  <span className="capitalize opacity-60">
+			{monthYear}
+		  </span>
+	</div>
+	
+	<div className="hidden md:flex flex-col gap-2 text-[#BAC8C1]">
 	  {/* Jours + dates */}
 	  <div className="flex gap-4">
 		{daysLabels.map((label, i) => (
@@ -75,5 +93,6 @@ export function CalendarWidget() {
 		Semaine <span className="text-[#B1FB8E]">{weekNumber}</span>
 	  </div>
 	</div>
+	</>
   );
 }
