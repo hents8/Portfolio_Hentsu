@@ -97,23 +97,8 @@ const currentQuote = quotes[quoteIndex];
       </div>
 
       {/* News */}
-      <div className="absolute bottom-6 right-6 z-20 hidden md:block">
-  {!loading && articles.length > 0 ? (
-    <NewsWidget articles={articles} loading={loading} />
-  ) : (
-    <div className="text-gray-400 text-sm flex justify-center items-center">
-      Chargement des actualités...
-    </div>
-  )}
-</div>
-
-{/* Mobile bottom-left */}
-<div className="block md:hidden absolute bottom-0 left-0 z-20 w-1/2 p-2">
-  {!loading && articles.length > 0 ? (
-    <NewsWidget articles={articles.slice(0, 1)} loading={loading} />
-  ) : (
-    <div className="text-gray-400 text-xs mt-1">Aucun article disponible.</div>
-  )}
+<div className="absolute bottom-6 right-6 z-20">
+  <NewsWidget articles={articles} loading={loading} />
 </div>
 
       {/* Main content */}
