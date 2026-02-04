@@ -6,6 +6,7 @@ import { NewsWidget } from "../components/NewsWidget";
 import { CalendarWidget } from "../components/CalendarWidget";
 import { TimeWeatherWidget } from "../components/TimeWeatherWidget";
 import { useNews } from "../hooks/useNews";
+import MobileNewsRow from "./MobileNewsRow";
 
 export default function Hero() {
   const { articles = [], loading = true } = useNews();
@@ -47,7 +48,7 @@ const currentQuote = quotes[quoteIndex];
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-start md:justify-center items-center text-center md:text-left px-6 pt-20 md:pt-0 pb-40 md:pb-0 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-start md:justify-center items-center text-center md:text-left px-6 pt-20 md:pt-0 pb-50 md:pb-0 overflow-hidden"
     >
       <DataNetworkBackground />
 	  
@@ -96,10 +97,12 @@ const currentQuote = quotes[quoteIndex];
         <TimeWeatherWidget />
       </div>
 
-      {/* News */}
-<div className="absolute bottom-6 right-6 z-20">
+
+{/* NEWS – DESKTOP */}
+<div className="hidden md:block absolute bottom-6 right-6 z-20">
   <NewsWidget articles={articles} loading={loading} />
 </div>
+
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
@@ -204,54 +207,58 @@ const currentQuote = quotes[quoteIndex];
 				</div>
 				
 				
-				<div
-				  className="
-					md:hidden
-					absolute bottom-3 left-0.5 right-3
-					z-20
-				  "
-				>
-					  <div
-						className="
-						  flex
-						  gap-2
-						  items-stretch
-						"
-					  >
-								{/* QUOTE À GAUCHE */}
-								<div
-								  className="
-									w-[32%]
-									flex flex-col justify-end items-start
-									pl-3
-									pb-2
-									
-								  "
-								  style={{ minHeight: "140px" }}
-								>
-								  <AnimatePresence mode="wait">
-									<motion.div
-									  key={quoteIndex}
-									  initial={{ opacity: 0, x: -10 }}
-									  animate={{ opacity: 1, x: 0 }}
-									  exit={{ opacity: 0, x: 10 }}
-									  transition={{ duration: 0.4 }}
-									  className="flex flex-col justify-end items-start h-full gap-1"
-									>
-									  <p className="text-[11px] leading-snug italic text-[#E6E6E6] text-left">
-										“{currentQuote.text}”
-									  </p>
-									  <span
-										className="block mt-1 text-[11px] text-[#B1FB8E] font-semibold text-left"
-										style={{ fontFamily: "MyFont" }}
-									  >
-									{currentQuote.author}
-									  </span>
-									</motion.div>
-								</AnimatePresence>
-								</div>
-						</div>
-				</div>
+			{/* ░░░ MOBILE BOTTOM AREA ░░░ */}
+	<div
+	  className="
+		md:hidden
+		absolute
+		bottom-3
+		left-0
+		right-0
+		z-20
+		px-2
+	  "
+	>
+  <div className="flex items-end gap-2">
+    
+    {/* CITATION MOBILE */}
+   <div
+  className="
+    w-[32%]
+  "
+>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={quoteIndex}
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 10 }}
+          transition={{ duration: 0.4 }}
+          className="flex flex-col justify-end gap-1"
+        >
+          <p className="text-[12px] leading-snug italic text-[#E6E6E6] text-left">
+            “{currentQuote.text}”
+          </p>
+          <span className="text-[11px] text-[#B1FB8E] font-semibold text-left">
+            {currentQuote.author}
+          </span>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+
+    {/* NEWS MOBILE */}
+    <div className="w-[68%] flex justify-end">
+  <div className="w-full max-w-[260px]">
+    <span className="block text-[11px] font-semibold text-[#B1FB8E] mb-1 text-right">
+      Actualités
+    </span>
+    <MobileNewsRow articles={articles.slice(0, 2)} />
+  </div>
+</div>
+
+  </div>
+</div>
+
     </section>
   );
 }

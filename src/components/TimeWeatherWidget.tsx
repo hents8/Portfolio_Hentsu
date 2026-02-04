@@ -34,7 +34,7 @@ export function TimeWeatherWidget() {
 
   return (
   <>
-	<div className="md:hidden w-full flex flex-col items-end px-3 py-2 mt-10 text-[#BAC8C1] text-xs leading-tight">
+	<div className="md:hidden w-full flex flex-col items-end px-3 py-2 mt-4 text-[#BAC8C1] text-xs leading-tight">
         <span className="font-bold text-[#B1FB8E]">
           {time}
         </span>

@@ -44,7 +44,7 @@ export function CalendarWidget() {
 
   return (
   <>
-	<div className="md:hidden flex flex-col items-start px-3 py-2 mt-10 text-[#BAC8C1] text-xs leading-tight">
+	<div className="md:hidden flex flex-col items-start px-3 py-2 mt-4 text-[#BAC8C1] text-xs leading-tight">
 		  <span className="font-semibold text-[#B1FB8E] flex gap-2">
 			{daysLabels[todayIndex]}
 			<span className="text-[#F5F5F5]">
