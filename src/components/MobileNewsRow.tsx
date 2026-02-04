@@ -1,6 +1,3 @@
-// MobileNewsRow.tsx
-import React from "react";
-
 export default function MobileNewsRow({ article }: { article: any }) {
   return (
     <div className="flex w-full h-full">
