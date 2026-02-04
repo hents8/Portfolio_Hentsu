@@ -9,7 +9,7 @@ export function NewsWidget({
   loading: boolean;
 }) {
   return (
-    <div className="widget-news p-3 bg-[#2A3A2A]/80 rounded-2xl shadow-lg">
+    <div className="widget-news p-3 bg-[#2A3A2A]/80 rounded-2xl">
       
 
       {loading ? (
@@ -19,9 +19,8 @@ export function NewsWidget({
       ) : articles.length > 0 ? (
         <>
           {/* MOBILE : 1 article, titre seulement en bas à droite */}
-         <div className="md:hidden absolute bottom-0 right-0 z-20 w-1/2 p-2 bg-[#2A3A2A]/70 backdrop-blur-sm rounded-tl-2xl shadow-lg">
-           <span className="text-xs font-semibold text-gray-400 mb-1 text-right">Actualités
-			</span>
+         <div className="md:hidden absolute bottom-0 right-0 z-20 w-full p-2 rounded-tl-2xl">
+           <span className="block text-[10px] font-semibold text-[#B1FB8E] mb-2 text-right">Actualités</span>
 			<MobileNewsRow article={articles[0]} />
           </div>
 

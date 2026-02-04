@@ -202,6 +202,56 @@ const currentQuote = quotes[quoteIndex];
 						</motion.div>
 					</AnimatePresence>
 				</div>
+				
+				
+				<div
+				  className="
+					md:hidden
+					absolute bottom-3 left-0.5 right-3
+					z-20
+				  "
+				>
+					  <div
+						className="
+						  flex
+						  gap-2
+						  items-stretch
+						"
+					  >
+								{/* QUOTE À GAUCHE */}
+								<div
+								  className="
+									w-[32%]
+									flex flex-col justify-end items-start
+									pl-3
+									pb-2
+									
+								  "
+								  style={{ minHeight: "140px" }}
+								>
+								  <AnimatePresence mode="wait">
+									<motion.div
+									  key={quoteIndex}
+									  initial={{ opacity: 0, x: -10 }}
+									  animate={{ opacity: 1, x: 0 }}
+									  exit={{ opacity: 0, x: 10 }}
+									  transition={{ duration: 0.4 }}
+									  className="flex flex-col justify-end items-start h-full gap-1"
+									>
+									  <p className="text-[10px] leading-snug italic text-[#E6E6E6] text-left">
+										“{currentQuote.text}”
+									  </p>
+									  <span
+										className="block mt-1 text-[10px] text-[#B1FB8E] font-semibold text-left"
+										style={{ fontFamily: "MyFont" }}
+									  >
+									{currentQuote.author}
+									  </span>
+									</motion.div>
+								</AnimatePresence>
+								</div>
+						</div>
+				</div>
     </section>
   );
 }
