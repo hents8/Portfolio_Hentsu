@@ -47,7 +47,7 @@ const currentQuote = quotes[quoteIndex];
   return (
     <section
       id="hero"
-      className="relative h-screen flex flex-col md:flex-row items-center justify-center text-center md:text-left px-6 gap-10 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-start md:justify-center items-center text-center md:text-left px-6 pt-20 md:pt-0 pb-40 md:pb-0 overflow-hidden"
     >
       <DataNetworkBackground />
 	  
@@ -57,7 +57,7 @@ const currentQuote = quotes[quoteIndex];
 				md:hidden
 				w-full
 				px-4
-				pt-4
+				pt-14
 				relative
 				-top-6
 				z-20
@@ -102,7 +102,7 @@ const currentQuote = quotes[quoteIndex];
 </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center gap-10" style={{ top: "-1.5rem" }}>
+      <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
 		  <div
 			  className="
 				hidden md:block
@@ -238,11 +238,11 @@ const currentQuote = quotes[quoteIndex];
 									  transition={{ duration: 0.4 }}
 									  className="flex flex-col justify-end items-start h-full gap-1"
 									>
-									  <p className="text-[10px] leading-snug italic text-[#E6E6E6] text-left">
+									  <p className="text-[11px] leading-snug italic text-[#E6E6E6] text-left">
 										“{currentQuote.text}”
 									  </p>
 									  <span
-										className="block mt-1 text-[10px] text-[#B1FB8E] font-semibold text-left"
+										className="block mt-1 text-[11px] text-[#B1FB8E] font-semibold text-left"
 										style={{ fontFamily: "MyFont" }}
 									  >
 									{currentQuote.author}

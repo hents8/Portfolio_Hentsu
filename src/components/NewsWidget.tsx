@@ -20,8 +20,8 @@ export function NewsWidget({
         <>
           {/* MOBILE : 1 article, titre seulement en bas à droite */}
          <div className="md:hidden absolute bottom-0 right-0 z-20 w-full p-2 rounded-tl-2xl">
-           <span className="block text-[10px] font-semibold text-[#B1FB8E] mb-2 text-right">Actualités</span>
-			<MobileNewsRow article={articles[0]} />
+           <span className="block text-[11px] font-semibold text-[#B1FB8E] mb-2 text-right">Actualités</span>
+			<MobileNewsRow articles={articles.slice(0, 2)} />
           </div>
 
           {/* DESKTOP : 2 articles avec contenu */}
