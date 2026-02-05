@@ -22,11 +22,11 @@ export async function handler() {
   try {
     const feeds = [
       {
-        url: "https://midi-madagasikara.mg/feed/",
+        url: "https://midi-madagasikara.mg/category/economie/feed/",
         type: "local",
       },
       {
-        url: "https://www.insightplatforms.com/feed/",
+        url: "https://www.technologyreview.com/topic/artificial-intelligence/feed",
         type: "data",
       },
     ];

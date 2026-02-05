@@ -193,7 +193,7 @@ const currentQuote = quotes[quoteIndex];
 						  transition={{ duration: 0.8 }}
 						  className="flex flex-col justify-end h-full"
 						>
-						  <p className="text-lg md:text-xl leading-relaxed italic text-[#E6E6E6]">
+						  <p className="text-lg md:text-xl leading-relaxed italic text-[#F5F5F5]">
 							“{currentQuote.text}”
 						  </p>
 						  <span
@@ -236,7 +236,7 @@ const currentQuote = quotes[quoteIndex];
           transition={{ duration: 0.4 }}
           className="flex flex-col justify-end gap-1"
         >
-          <p className="text-[12px] leading-snug italic text-[#E6E6E6] text-left">
+          <p className="text-[12px] leading-snug italic text-[#F5F5F5] text-left">
             “{currentQuote.text}”
           </p>
           <span className="text-[11px] text-[#B1FB8E] font-semibold text-left">

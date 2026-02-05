@@ -11,7 +11,7 @@ export default function NewsRow({ article }: { article: any }) {
         block
         text-xs md:text-sm
         font-medium
-        text-white
+        text-[#F5F5F5]
         md:group-hover:text-[#B1FB8E]
         line-clamp-1
       ">
