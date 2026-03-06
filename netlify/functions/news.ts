@@ -1,6 +1,8 @@
 import Parser from "rss-parser";
 
-const parser = new Parser();
+const parser = new Parser({
+  timeout: 8000
+});
 
 function stripHtml(html: string) {
   return html
@@ -14,35 +16,34 @@ function isForbidden(text: string) {
   return t.includes("nécrologie") || t.includes("necrologie");
 }
 
-function pickRandom<T>(arr: T[]) {
+function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export async function handler() {
-  try {
-    const feeds = [
-      {
-        url: "https://midi-madagasikara.mg/category/economie/feed/",
-        type: "local",
-      },
-      {
-        url: "https://www.technologyreview.com/topic/artificial-intelligence/feed",
-        type: "data",
-      },
-    ];
+  const feeds = [
+    {
+      url: "https://midi-madagasikara.mg/category/economie/feed/",
+      type: "local",
+    },
+    {
+      url: "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+      type: "data",
+    },
+  ];
 
-    const articles: any[] = [];
+  const articles: any[] = [];
 
-    for (const feedInfo of feeds) {
-      const res = await fetch(feedInfo.url);
-      const text = await res.text();
-      const feed = await parser.parseString(text);
+  for (const feedInfo of feeds) {
+    try {
+
+      // 🔹 parser RSS directement
+      const feed = await parser.parseURL(feedInfo.url);
 
       if (!feed.items?.length) continue;
 
-      // 1️⃣ filtrer articles propres
       const cleanItems = feed.items
-        .map(item => {
+        .map((item) => {
           const title = stripHtml(item.title || "");
           const description = stripHtml(
             item.contentSnippet || item.content || ""
@@ -52,30 +53,29 @@ export async function handler() {
             title,
             description,
             link: item.link,
-            source: feed.title,
+            source: feed.title || feedInfo.url,
           };
         })
-        .filter(item => !isForbidden(item.title + " " + item.description))
-        .slice(0, 3); // 2️⃣ max 3 par feed
+        .filter((item) => !isForbidden(item.title + " " + item.description))
+        .slice(0, 3);
 
       if (cleanItems.length === 0) continue;
 
-      // 3️⃣ prendre 1 article aléatoire
       articles.push(pickRandom(cleanItems));
+
+    } catch (err) {
+
+      // 🔹 si un RSS casse on ignore
+      console.log("RSS ignoré :", feedInfo.url, err);
+
     }
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify(articles),
-      headers: { "Content-Type": "application/json" },
-    };
-  } catch (error) {
-    console.error("Erreur News Function :", error);
-
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: "Impossible de récupérer les articles." }),
-      headers: { "Content-Type": "application/json" },
-    };
   }
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify(articles),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
 }
