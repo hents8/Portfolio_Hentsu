@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "background": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle_1": "IT & Data Specialist | Data Engineering & Systems Support",
+    "subtitle_2": "Transforming complex datasets and IT infrastructure into reliable, high-performing, and actionable solutions.",
+    "cta": "View My Projects",
+    "news_title": "News"
+  },
+  "about": {
+    "title": "About Me",
+    "hello": "Hello,",
+    "i_am": "I am",
+    "download_cv": "Download CV",
+    "p1_bold": "IT & Data Specialist",
+    "p1_text": " holding a Master's degree in Numerical Computation, combining technical expertise in data engineering (Python, SQL, R, ETL), BI automation, and front-end development with proven experience in technical support and client relations.",
+    "p2": "Results-oriented troubleshooter and builder, skilled in designing analytical systems, performing QA/UAT testing, and resolving technical issues.",
+    "p3": "Fully bilingual in English, delivering scalable and high-value solutions for international corporate accounts."
+  },
+  "calendar": {
+    "week": "Week",
+    "days": ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
+  },
+  "weather": {
+    "wind": "Wind",
+    "humidity": "Humidity"
+  },
+  "news": {
+    "title": "News",
+    "loading": "Loading news...",
+    "empty": "No articles available."
+  },
+  "skills": {
+    "main_title": "My Skills",
+    "cat_languages": "Languages & Data Engineering",
+    "cat_bi": "Business Intelligence & Data Analysis",
+    "cat_web": "Web Development & Integration",
+    "cat_design": "Design & Visual Creation",
+    "cat_collab": "Environments & Collaborative Tools",
+    "cat_stats": "Statistical Methods",
+    "items": {
+      "bi_integration": "Power BI & Python Visuals Integration",
+      "dashboard_design": "Dashboard UI/UX Design",
+      "descriptive_analysis": "Descriptive Analysis",
+      "stat_tests": "Statistical Testing (t-test, ANOVA, Chi², Correlations)",
+      "pca_mca": "PCA / CA / MCA",
+      "segmentation": "Clustering & Segmentation (HCA, K-means)",
+      "regression": "Regression Analysis (Linear, Logistic)",
+      "predictive_modeling": "Predictive Modeling"
+    }
+  },
+  "background": {
+    "title": "Background & Experience",
+    "exp_title": "Professional Experience",
+    "edu_title": "Education & Certifications",
+    "view_link": "View",
+    "exp1": {
+      "role": "Statistical & Technical Data Analyst",
+      "company": "Stefi Groupe Outsourcia",
+      "period": "2021 - Present",
+      "p1": "Spearheaded client communications and operational workflows for international enterprise accounts, ensuring continuous SLA compliance.",
+      "p2": "Data collection, cleaning, and processing of large datasets (Python, R, SQL, SPSS) with automated ETL/ELT pipelines (Airflow).",
+      "p3": "Programming and managing online surveys via Sphinx, Askia, and Cognito Forms for quantitative and qualitative studies.",
+      "p4": "Designing automated dynamic reports and advanced BI dashboards (Power BI, Looker Studio, Sphinx).",
+      "p5": "Executing advanced statistical modeling (PCA, MCA, A/B Testing, regressions) to deliver strategic recommendations.",
+      "p6": "Supervising operational teams and providing technical support for data workflows and tools."
+    },
+    "exp2": {
+      "role": "Data Visualization Analyst (Freelance / Contractual)",
+      "company": "DCDM Research",
+      "period": "2024",
+      "p1": "Designing and maintaining automated Google Looker Studio dashboards for marketing and operational KPI tracking.",
+      "p2": "Data Quality Assurance (DQA): End-to-end data cleansing and automated validation to guarantee data integrity before system integration.",
+      "p3": "Quality Assurance (QA) & Interface Testing: Executing UAT on React web interfaces, validating API data flows, and optimizing UI/UX."
+    },
+    "exp3": {
+      "role": "Mathematics & Logic Teacher",
+      "company": "LJRA Itaosy",
+      "period": "2020 - 2021",
+      "p1": "Teaching general, financial, and applied statistical mathematics (probability, linear algebra) to high school science students.",
+      "p2": "Designing educational materials, simplifying complex concepts, and building structured problem-solving skills."
+    },
+    "edu": {
+      "m2_title": "Master's Degree / Bachelor's",
+      "m2_sub": "Numerical Computation & Applied Mathematics, University of Antananarivo (2019)",
+      "m2_desc": ": Unitary Equivalence to a Truncated Toeplitz Operator: Analytic Symbol.",
+      "english_title": "Advanced English Certificate",
+      "english_sub": "National Center for English Language Teaching (CNELA), Antananarivo (2012)",
+      "ba_desc": "Business Analysis & Process Management – Coursera Project Network (2024)",
+      "gads_desc": "Google Ads for Beginners – Coursera Project Network (2024)",
+      "pbi_desc": "Data Visualization with Power BI – Great Learning Academy (2024)",
+      "bi_desc": "Business Intelligence Fundamentals – Simplilearn Skillup (2024)",
+      "self_learn": "Continuous Self-Learning",
+      "self_learn_desc": " : Airflow, BigQuery, React, Tailwind CSS"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "items": {
+      "veille_media": {
+        "title": "Madagascar Media Monitoring",
+        "description": "Automated Data pipeline for collecting, NLP enriching (FR/MG), and analyzing Malagasy press news in real time.",
+        "details": "Production-grade Data Engineering & NLP Pipeline:\n• Multi-source Extraction: Automated fetching from 15+ news outlets (RSS feeds, BeautifulSoup, Selenium) with SHA-256 deduplication.\n• Transformation & Multilingual NLP: Language detection (FR/MG), sentiment analysis using Deep Learning (XLM-RoBERTa), and semantic classification (Sentence-Transformers).\n• Storage & Data Warehouse: MongoDB Atlas (NoSQL) ➔ Automated batch sync into Google BigQuery.\n• Analytics & BI: Workflows orchestrated with Prefect and delivered through an interactive Looker Studio dashboard.",
+        "live_demo": "Open Looker Studio Dashboard",
+        "github_btn": "GitHub Source Code"
+      },
+      "symfony_bi": {
+        "title": "Symfony Analytics Dashboard",
+        "description": "Dual-panel BI web application for dynamic parsing, cross-tabulation analysis, and comparison of Excel media surveys.",
+        "details": "Web Business Intelligence & Data Viz Platform:\n• Excel Ingestion & Caching: Optimized parsing using PhpSpreadsheet with in-memory caching ($dataCache) for ultra-fast query execution.\n• Cross-Tabulation & Timelines: Dynamic matrix computation (Media × Sentiment) and time-series metrics (monthly trends & sentiment polarity).\n• Dual-Panel Comparison: Independent dual-filtering dashboard (Year / Month) enabling side-by-side period comparisons.\n• Chart.js Integration: Interactive Doughnut charts, KPI cards, and Stacked Bar charts with automated frequency and percentage calculations via DTOs.",
+        "github_btn": "GitHub Source Code"
+      },
+      "file_explorer": {
+        "title": "Web File Explorer & Sync Engine",
+        "description": "Fullstack Node.js/React platform for directory browsing, file transfers, and automated system folder synchronization into MongoDB.",
+        "details": "Web File Management & Synchronization Engine:\n• Recursive Sync Engine: Automated scanning and metadata indexing (size, modification date, file type) of local system directories using Node.js (fs/path).\n• Security & Path Sanitization: Native protection against Path Traversal vulnerabilities during tree navigation.\n• Storage & REST API: Metadata persistence using MongoDB (Mongoose) and multipart upload stream handling via Multer.\n• Responsive Interface: Modular React UI supporting directory tree browsing, file uploading, and media previews.",
+        "github_btn": "GitHub Source Code"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "placeholder_name": "Your name",
+    "placeholder_email": "Your email address",
+    "placeholder_message": "Your message...",
+    "btn_send": "Send Message",
+    "btn_sending": "Sending...",
+    "error_fill_all": "Please fill in all required fields.",
+    "error_sending": "An error occurred while sending. Please try again later.",
+    "modal_title": "Message Sent Successfully",
+    "modal_desc": "Your message has been received. An automated confirmation has been sent to your email address.",
+    "modal_close": "Close"
+  },
+  "easteregg": {
+  "trigger_btn": "[UI/UX Lab] Discover the creative streaming & audio project",
+  "badge": "Creative Side Project • Off-Duty",
+  "title": "Interactive Streaming & Web Audio Engine",
+  "description": "A fun frontend exploration built to test smooth web animations and contextual audio interactions, directly inspired by Netflix UI components.",
+  "btn_demo": "Try Interactive Demo",
+  "btn_code": "Source Code"
+}
+}

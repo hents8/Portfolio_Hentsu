@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "background": "Parcours",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle_1": "IT & Data Specialist | Data Engineering & Systems Support",
+    "subtitle_2": "Je transforme des données complexes et des infrastructures IT en solutions fiables, performantes et exploitables.",
+    "cta": "Voir mes projets",
+    "news_title": "Actualités"
+  },
+  "about": {
+    "title": "À propos",
+    "hello": "Hello,",
+    "i_am": "je suis",
+    "download_cv": "Télécharger mon CV",
+    "p1_bold": "Professionnel de l'IT et de la Data",
+    "p1_text": ", titulaire d'un Master en Calcul Numérique, j'allie une solide maîtrise des pipelines de données (Python, R, SQL, ETL), du développement front-end et de l'automatisation BI à une expérience éprouvée en support technique et gestion de la relation client.",
+    "p2": "Rigoureux et orienté solution, je suis capable d'intervenir aussi bien sur la conception d'outils analytiques et d'interfaces web que sur le dépannage technique et la qualité des systèmes.",
+    "p3": "Bilingue en anglais et très adaptable, je propose des interventions fiables, structurées et à forte valeur ajoutée pour les organisations et comptes internationaux."
+  },
+  "calendar": {
+    "week": "Semaine",
+    "days": ["LUN", "MAR", "MER", "JEU", "VEN", "SAM", "DIM"]
+  },
+  "weather": {
+    "wind": "Vent",
+    "humidity": "Hum"
+  },
+  "news": {
+    "title": "Actualités",
+    "loading": "Chargement des actualités...",
+    "empty": "Aucun article disponible."
+  },
+  "skills": {
+    "main_title": "Mes Compétences",
+    "cat_languages": "Langages & Data Engineering",
+    "cat_bi": "Business Intelligence & Data Analysis",
+    "cat_web": "Développement Web & Intégration",
+    "cat_design": "Design & Création Visuelle",
+    "cat_collab": "Environnements & Outils Collaboratifs",
+    "cat_stats": "Méthodes Statistiques",
+    "items": {
+      "bi_integration": "Intégration de visualisations Power BI et Python",
+      "dashboard_design": "Design d’interfaces de dashboards",
+      "descriptive_analysis": "Analyse descriptive",
+      "stat_tests": "Tests statistiques (t-test, ANOVA, Khi², corrélations)",
+      "pca_mca": "ACP / AFC / ACM",
+      "segmentation": "Segmentation (CAH, K-means)",
+      "regression": "Régression (linéaire, logistique)",
+      "predictive_modeling": "Modélisation prédictive"
+    }
+  },
+  "background": {
+    "title": "Parcours",
+    "exp_title": "Expériences Professionnelles",
+    "edu_title": "Éducation & Certifications",
+    "view_link": "Voir",
+    "exp1": {
+      "role": "Analyste Statistique & Données Techniques",
+      "company": "Stefi Groupe Outsourcia",
+      "period": "2021 - Présent",
+      "p1": "Gestion de la communication client et pilotage des flux opérationnels pour des comptes internationaux, garantissant le respect continu des engagements (SLA).",
+      "p2": "Collecte, nettoyage et traitement de grands volumes de données (Python, R, SQL, SPSS) avec création de pipelines ETL/ELT automatisés (Airflow).",
+      "p3": "Programmation et gestion d’enquêtes en ligne via Sphinx, Askia et Cognito Forms pour la réalisation d'études quantitatives et qualitatives.",
+      "p4": "Conception de rapports dynamiques automatisés et de dashboards décisionnels avancés (Power BI, Looker Studio, Sphinx).",
+      "p5": "Réalisation de modélisations statistiques avancées (ACP, ACM, A/B Testing, régressions) pour formuler des recommandations stratégiques.",
+      "p6": "Supervision d'équipes opérationnelles et support technique sur les procédures et outils de traitement de données."
+    },
+    "exp2": {
+      "role": "Analyste en Visualisation de Données (Freelance / Contrat)",
+      "company": "DCDM Research",
+      "period": "2024",
+      "p1": "Conception et automatisation de tableaux de bord interactifs sous Google Looker Studio pour le suivi des KPI marketing et opérationnels.",
+      "p2": "Assurance Qualité des Données (DQA) : automatisation des flux d'ingestion et validation de bout en bout pour garantir l'intégrité des données.",
+      "p3": "Tests de Recette (QA / UAT) sur des interfaces web React, validation des flux de données d'APIs et optimisation UX/UI des rapports."
+    },
+    "exp3": {
+      "role": "Professeur de Mathématiques & Logique",
+      "company": "LJRA Itaosy",
+      "period": "2020 - 2021",
+      "p1": "Enseignement des mathématiques générales, financières et statistiques (probabilités, algèbre linéaire) aux classes scientifiques.",
+      "p2": "Création de supports pédagogiques, vulgarisation de concepts complexes et développement du raisonnement logique des élèves."
+    },
+    "edu": {
+      "m2_title": "Master 2 / Licence",
+      "m2_sub": "Calcul Numérique & Mathématiques Appliquées, Université d'Antananarivo (2019)",
+      "m2_desc": ": Équivalence Unitaire à un Opérateur de Toeplitz Tronqué : Symbole Analytique.",
+      "english_title": "Diplôme d'Anglais Avancé",
+      "english_sub": "Centre National d'Enseignement de la Langue Anglaise (CNELA), Antananarivo (2012)",
+      "ba_desc": "Business Analysis & Process Management – Coursera Project Network (2024)",
+      "gads_desc": "Google Ads for Beginners – Coursera Project Network (2024)",
+      "pbi_desc": "Data Visualization with Power BI – Great Learning Academy (2024)",
+      "bi_desc": "Business Intelligence Fundamentals – Simplilearn Skillup (2024)",
+      "self_learn": "Auto-formation continue",
+      "self_learn_desc": " : Airflow, BigQuery, React, Tailwind CSS"
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "items": {
+      "veille_media": {
+        "title": "Veille Média Madagascar",
+        "description": "Pipeline Data automatisé pour la collecte, l'enrichissement par NLP (FR/MG) et l'analyse décisionnelle de la presse malgache.",
+        "details": "Pipeline Data Engineering & NLP de niveau Production :\n• Extraction Multi-sources : Collecte automatisée sur +15 médias (Flux RSS, BeautifulSoup, Selenium) avec dédoublonnage SHA-256.\n• Transformation & NLP Hybride : Détection de langue (FR/MG), analyse de sentiment par Deep Learning (XLM-RoBERTa) et classification sémantique (Sentence-Transformers).\n• Stockage & Warehouse : MongoDB Atlas (NoSQL) ➔ Synchronisation batch vers Google BigQuery.\n• Analytics & BI : Workflows orchestrés sous Prefect et restitués via un tableau de bord interactif Looker Studio.",
+        "live_demo": "Consulter le Rapport Looker Studio",
+        "github_btn": "Code Source GitHub"
+      },
+      "symfony_bi": {
+        "title": "Dashboard Analytics Symfony",
+        "description": "Application Web BI Dual-Panel pour le traitement dynamique, l'analyse croisée et la comparaison d'enquêtes médias Excel.",
+        "details": "Plateforme Business Intelligence & Data Viz Web :\n• Ingestion & Caching Excel : Lecture optimisée via PhpSpreadsheet avec mise en cache mémoire ($dataCache) pour des requêtes instantanées.\n• Analyse Croisée & Timeline : Calcul dynamique de matrices croisées (Media × Tonalité) et de séries temporelles (Évolution mensuelle des réponses et polarités).\n• Comparaison Dual-Panel : Interface à deux panneaux filtrants indépendants (Année / Mois) pour une analyse comparative côte à côte.\n• Visualisation Chart.js : Doughnuts, cartes KPI et histogrammes empilés (Stacked Bar Charts) avec calcul automatique des fréquences et pourcentages via DTO.",
+        "github_btn": "Code Source GitHub"
+      },
+      "file_explorer": {
+        "title": "Explorateur & Synchroniseur de Fichiers Web",
+        "description": "Application Fullstack Node.js/React d'exploration, de transfert et d'indexation automatisée de répertoires système vers MongoDB.",
+        "details": "Système de Gestion & Synchronisation de Fichiers Web :\n• Moteur de Synchronisation Récursif : Parcours automatique et indexation dynamique des répertoires du système de fichiers avec calcul des métadonnées (tailles, dates, types) sous Node.js (fs/path).\n• Sécurité & Sanitisisation : Prévention des failles de sécurité de type Path Traversal lors du parcours d'arborescence.\n• Stockage & API REST : Persistance des métadonnées sous MongoDB (Mongoose) et gestion des transferts multipart via Multer.\n• Interface Réactive : Explorateur React modulaire pour la navigation arborescente, l'envoi de fichiers et la prévisualisation média.",
+        "github_btn": "Code Source GitHub"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "placeholder_name": "Votre nom",
+    "placeholder_email": "Votre email",
+    "placeholder_message": "Votre message...",
+    "btn_send": "Envoyer",
+    "btn_sending": "Envoi en cours...",
+    "error_fill_all": "Merci de remplir tous les champs.",
+    "error_sending": "Erreur lors de l'envoi. Veuillez réessayer plus tard.",
+    "modal_title": "Message envoyé avec succès",
+    "modal_desc": "Votre message a bien été transmis. Un accusé de réception vous a été envoyé par e-mail.",
+    "modal_close": "Fermer"
+  },
+  "easteregg": {
+  "trigger_btn": "[UI/UX Lab] Découvrir le projet créatif streaming & audio",
+  "badge": "Creative Side Project • Off-Duty",
+  "title": "Interactive Streaming & Web Audio Engine",
+  "description": "Une exploration ludique développée pour tester les limites des animations web fluides et des interactions audio contextuelles, directement inspirée des codes visuels de Netflix.",
+  "btn_demo": "Tester la Démo Interactive",
+  "btn_code": "Code Source"
+}
+}
