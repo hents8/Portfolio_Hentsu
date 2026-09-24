@@ -8,7 +8,7 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex items-center space-x-1 font-mono text-sm">
+    <div className="flex items-center space-x-1 text-sm">
       <button
         onClick={() => changeLanguage('fr')}
         className={`px-2 py-1 rounded transition-colors duration-200 ${
